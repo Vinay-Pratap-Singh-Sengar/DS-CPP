@@ -1,0 +1,9 @@
+1. Write a program to find the maximum between three numbers.
+
+2. Write a program to input any alphabet and check whether it is vowel or consonant.
+
+3. Write a program to check whether a number is divisible by 5 and 11 or not.
+
+4. Write a program to check whether a number is even or odd.
+
+5.Write a program to check whether a year is a leap year or not.
