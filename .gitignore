@@ -28,3 +28,8 @@ Makefile
 # Editor files
 *.swp
 *.swo
+
+# Programs
+01_Fullname
+02_Greeting
+03_Word_Length
