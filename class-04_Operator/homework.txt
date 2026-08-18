@@ -7,3 +7,5 @@
 4. Write a program to check whether a number is even or odd.
 
 5.Write a program to check whether a year is a leap year or not.
+
+6. Write a program to input any symbol and check whether it is a character or digit.
