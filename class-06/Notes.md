@@ -34,9 +34,11 @@ else if(day == 3){
 else if(day == 4){
     cout << "Thursday";
 }
-The same program using switch is cleaner:
+```
 
-cpp
+The same program using `switch` is cleaner:
+
+```cpp
 switch(day){
 
     case 1:
@@ -55,11 +57,14 @@ switch(day){
         cout << "Thursday";
         break;
 }
-Simple Rule
-Use switch when you have one variable/expression and multiple fixed values.
+```
 
-📌 Syntax of Switch
-cpp
+**Simple Rule**  
+Use `switch` when you have one variable/expression and multiple fixed values.
+
+## 📌 Syntax of Switch
+
+```cpp
 switch(expression){
 
     case value1:
@@ -77,40 +82,46 @@ switch(expression){
     default:
         // statements
 }
-📌 Components of Switch
-A switch statement mainly contains:
+```
 
-switch
+## 📌 Components of Switch
 
-case
+A `switch` statement mainly contains:
 
-break
+- `switch`
+- `case`
+- `break`
+- `default`
 
-default
+### 1. `switch`
 
-1. switch
-The switch keyword is used to start the switch statement.
+The `switch` keyword is used to start the switch statement.
 
-cpp
+```cpp
 switch(number){
     
 }
-The expression inside switch() is evaluated.
+```
+
+The expression inside `switch()` is evaluated.
 
 Example:
 
-cpp
+```cpp
 int number = 2;
 
 switch(number){
 
 }
-Here, the value of number is 2.
+```
 
-2. case
-A case represents a possible value of the expression.
+Here, the value of `number` is 2.
 
-cpp
+### 2. `case`
+
+A `case` represents a possible value of the expression.
+
+```cpp
 switch(number){
 
     case 1:
@@ -125,22 +136,29 @@ switch(number){
         cout << "Three";
         break;
 }
+```
+
 If:
 
-cpp
+```cpp
 number = 2
+```
+
 then:
 
-cpp
+```cpp
 case 2:
+```
+
 will execute.
 
-3. break
-The break statement is used to stop the execution of the switch.
+### 3. `break`
+
+The `break` statement is used to stop the execution of the switch.
 
 Example:
 
-cpp
+```cpp
 switch(number){
 
     case 1:
@@ -151,20 +169,25 @@ switch(number){
         cout << "Two";
         break;
 }
-If number = 2:
+```
 
-text
+If `number = 2`:
+
+```
 Two
+```
+
 will be printed.
 
-After printing Two, break terminates the switch.
+After printing `Two`, `break` terminates the switch.
 
-4. default
-The default block executes when none of the cases match.
+### 4. `default`
+
+The `default` block executes when none of the cases match.
 
 Example:
 
-cpp
+```cpp
 int number = 10;
 
 switch(number){
@@ -180,17 +203,22 @@ switch(number){
     default:
         cout << "Invalid Number";
 }
-Output
+```
 
-text
+**Output**
+
+```
 Invalid Number
-Important
-default is similar to the final else of an if-else-if statement.
+```
 
-📌 How Switch Works
+**Important**  
+`default` is similar to the final `else` of an `if-else-if` statement.
+
+## 📌 How Switch Works
+
 Consider:
 
-cpp
+```cpp
 int number = 2;
 
 switch(number){
@@ -210,45 +238,55 @@ switch(number){
     default:
         cout << "Invalid";
 }
-Step 1
+```
+
+**Step 1**  
 C++ evaluates:
 
-cpp
+```cpp
 number
+```
+
 Value:
 
-text
+```
 2
-Step 2
+```
+
+**Step 2**  
 It checks the cases:
 
-case 1 → ❌
+- `case 1` → ❌
+- `case 2` → ✅
 
-case 2 → ✅
+**Step 3**  
+`case 2` executes:
 
-Step 3
-case 2 executes:
-
-cpp
+```cpp
 cout << "Two";
-Step 4
-break executes.
+```
 
-Step 5
+**Step 4**  
+`break` executes.
+
+**Step 5**  
 The switch statement terminates.
 
-Output
+**Output**
 
-text
+```
 Two
-📌 Fall-Through
-One of the most important concepts in switch is fall-through.
+```
 
-If break is not used, C++ continues executing the next cases.
+## 📌 Fall-Through
+
+One of the most important concepts in `switch` is **fall-through**.
+
+If `break` is not used, C++ continues executing the next cases.
 
 Example:
 
-cpp
+```cpp
 int number = 2;
 
 switch(number){
@@ -262,25 +300,32 @@ switch(number){
     case 3:
         cout << "Three";
 }
-Output
+```
 
-text
+**Output**
+
+```
 TwoThree
-Why?
-Because case 2 matches, but there is no break.
+```
+
+**Why?**  
+Because `case 2` matches, but there is no `break`.  
 Therefore, execution continues:
 
-text
+```
 case 2
    ↓
 case 3
-📌 Multiple Cases
-Multiple cases can execute the same block of code.
+```
+
+## 📌 Multiple Cases
+
+Multiple cases can execute the same block of code.  
 This is extremely useful when several values have the same meaning.
 
 Example:
 
-cpp
+```cpp
 switch(month){
 
     case 11:
@@ -290,32 +335,32 @@ switch(month){
         cout << "Winter Season";
         break;
 }
+```
+
 Here:
 
-11 → Winter
-
-12 → Winter
-
-1 → Winter
-
-2 → Winter
+- 11 → Winter
+- 12 → Winter
+- 1  → Winter
+- 2  → Winter
 
 All four cases execute the same code.
 
-📌 Practical Example – Find Season
-Problem
+## 📌 Practical Example – Find Season
+
+### Problem
+
 Write a program to take a month number from the user and print the season.
 
-Conditions
+**Conditions**
 
-11, 12, 1, 2 → Winter Season
+- 11, 12, 1, 2 → Winter Season
+- 3, 4, 5, 6   → Summer Season
+- 7, 8, 9, 10  → Rainy Season
 
-3, 4, 5, 6 → Summer Season
+### Program
 
-7, 8, 9, 10 → Rainy Season
-
-Program
-cpp
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -355,52 +400,71 @@ int main(){
 
     return 0;
 }
-Example 1
+```
+
+**Example 1**
 
 Input:
 
-text
+```
 12
+```
+
 Output:
 
-text
+```
 Winter Season
-Example 2
+```
+
+**Example 2**
 
 Input:
 
-text
+```
 5
+```
+
 Output:
 
-text
+```
 Summer Season
-Example 3
+```
+
+**Example 3**
 
 Input:
 
-text
+```
 8
+```
+
 Output:
 
-text
+```
 Rainy Season
-Example 4
+```
+
+**Example 4**
 
 Input:
 
-text
+```
 15
+```
+
 Output:
 
-text
+```
 You have entered wrong input
-📌 Switch with Character
-A switch can also be used with characters.
+```
+
+## 📌 Switch with Character
+
+A `switch` can also be used with characters.
 
 Example:
 
-cpp
+```cpp
 char grade = 'A';
 
 switch(grade){
@@ -428,22 +492,29 @@ switch(grade){
     default:
         cout << "Invalid Grade";
 }
-Important
+```
+
+**Important**  
 Characters are written using single quotes:
 
-text
+```
 'A'
 'B'
 '+'
 '-'
+```
+
 Strings are written using double quotes:
 
-text
+```
 "Apple"
 "Monday"
 "Hello"
-📌 Example – Vowel Using Switch
-cpp
+```
+
+## 📌 Example – Vowel Using Switch
+
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -477,18 +548,25 @@ int main(){
 
     return 0;
 }
+```
+
 Input
 
-text
+```
 A
+```
+
 Output
 
-text
+```
 Vowel
-📌 Example – Calculator Using Switch
-switch is commonly used to create menu-driven programs and calculators.
+```
 
-cpp
+## 📌 Example – Calculator Using Switch
+
+`switch` is commonly used to create menu-driven programs and calculators.
+
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -535,56 +613,55 @@ int main(){
 
     return 0;
 }
-📌 Switch vs If-Else
-if-else	switch
-Used for conditions	Used for fixed values
-Can check ranges	Best for exact values
-Supports >, <, >=, <=	Does not directly check ranges
-Supports complex conditions	Best for multiple choices
-Good for marks/age ranges	Good for menus
-More flexible	Cleaner for fixed choices
-📌 When Should We Use Switch?
-Use switch when:
+```
 
-One variable needs to be compared with multiple fixed values.
+## 📌 Switch vs If-Else
 
-Creating a menu-driven program.
+| `if-else`                              | `switch`                             |
+|----------------------------------------|--------------------------------------|
+| Used for conditions                    | Used for fixed values                |
+| Can check ranges                       | Best for exact values                |
+| Supports `>`, `<`, `>=`, `<=`          | Does not directly check ranges       |
+| Supports complex conditions            | Best for multiple choices            |
+| Good for marks/age ranges              | Good for menus                       |
+| More flexible                          | Cleaner for fixed choices            |
 
-Checking day numbers.
+## 📌 When Should We Use Switch?
 
-Checking month numbers.
+Use `switch` when:
 
-Checking character choices.
+- One variable needs to be compared with multiple fixed values.
+- Creating a menu-driven program.
+- Checking day numbers.
+- Checking month numbers.
+- Checking character choices.
+- Creating calculators.
+- Creating menu-based applications.
 
-Creating calculators.
+**Example**
 
-Creating menu-based applications.
-
-Example
-
-text
+```
 1 → Add
 2 → Update
 3 → Delete
 4 → Exit
-This is a good situation for switch.
+```
 
-📌 When Should We Use If-Else?
-Use if-else when:
+This is a good situation for `switch`.
 
-You need to check ranges.
+## 📌 When Should We Use If-Else?
 
-You need relational operators.
+Use `if-else` when:
 
-You need logical operators.
+- You need to check ranges.
+- You need relational operators.
+- You need logical operators.
+- You have complex conditions.
+- Multiple variables are involved.
 
-You have complex conditions.
+**Example:**
 
-Multiple variables are involved.
-
-Example:
-
-cpp
+```cpp
 if(marks >= 90){
     cout << "Grade A";
 }
@@ -594,70 +671,86 @@ else if(marks >= 80){
 else if(marks >= 70){
     cout << "Grade C";
 }
-Here, if-else is better because we are checking ranges.
+```
 
-📌 Important Rules of Switch
-Rule 1
+Here, `if-else` is better because we are checking ranges.
+
+## 📌 Important Rules of Switch
+
+**Rule 1**  
 The switch expression is evaluated once.
 
-cpp
+```cpp
 switch(number)
-Rule 2
+```
+
+**Rule 2**  
 Each case represents a possible value.
 
-cpp
+```cpp
 case 1:
 case 2:
 case 3:
-Rule 3
-Case values must be unique.
+```
+
+**Rule 3**  
+Case values must be unique.  
 ❌ Incorrect:
 
-cpp
+```cpp
 case 1:
 case 1:
-Rule 4
-break is used to exit the switch.
+```
 
-Rule 5
-If break is missing, fall-through can occur.
+**Rule 4**  
+`break` is used to exit the switch.
 
-Rule 6
-default executes when no case matches.
+**Rule 5**  
+If `break` is missing, fall-through can occur.
 
-Rule 7
+**Rule 6**  
+`default` executes when no case matches.
+
+**Rule 7**  
 Multiple cases can share the same block.
 
-cpp
+```cpp
 case 1:
 case 2:
 case 3:
     cout << "Same Output";
     break;
-Rule 8
-A colon : is used after every case.
+```
+
+**Rule 8**  
+A colon `:` is used after every case.  
 Correct:
 
-cpp
+```cpp
 case 1:
+```
 Incorrect:
-
-cpp
+```cpp
 case 1;
-📌 Common Mistakes
-❌ Mistake 1 – Forgetting break
+```
 
-cpp
+## 📌 Common Mistakes
+
+**❌ Mistake 1 – Forgetting `break`**
+
+```cpp
 case 1:
     cout << "Monday";
 
 case 2:
     cout << "Tuesday";
+```
+
 This can cause fall-through.
 
-❌ Mistake 2 – Duplicate Case
+**❌ Mistake 2 – Duplicate Case**
 
-cpp
+```cpp
 case 1:
     cout << "One";
     break;
@@ -665,35 +758,46 @@ case 1:
 case 1:
     cout << "Another";
     break;
+```
+
 The same case value cannot be repeated.
 
-❌ Mistake 3 – Using Double Quotes for Characters
+**❌ Mistake 3 – Using Double Quotes for Characters**
 
 Wrong:
 
-cpp
+```cpp
 case "A":
+```
+
 Correct:
 
-cpp
+```cpp
 case 'A':
-❌ Mistake 4 – Using Conditions in Case
+```
+
+**❌ Mistake 4 – Using Conditions in Case**
 
 Wrong:
 
-cpp
+```cpp
 case marks >= 90:
+```
+
 Use:
 
-cpp
+```cpp
 if(marks >= 90)
+```
+
 instead.
 
-📌 Output-Based Questions
-Question 1
+## 📌 Output-Based Questions
+
+**Question 1**  
 What will be the output?
 
-cpp
+```cpp
 int x = 2;
 
 switch(x){
@@ -713,14 +817,18 @@ switch(x){
     default:
         cout << "D";
 }
-Answer
+```
 
-text
+**Answer**
+
+```
 B
-Question 2
+```
+
+**Question 2**  
 What will be the output?
 
-cpp
+```cpp
 int x = 2;
 
 switch(x){
@@ -734,17 +842,21 @@ switch(x){
     case 3:
         cout << "C";
 }
-Answer
+```
 
-text
+**Answer**
+
+```
 BC
-Reason
-There is no break.
+```
 
-Question 3
+**Reason**  
+There is no `break`.
+
+**Question 3**  
 What will be the output?
 
-cpp
+```cpp
 int x = 10;
 
 switch(x){
@@ -760,14 +872,18 @@ switch(x){
     default:
         cout << "Invalid";
 }
-Answer
+```
 
-text
+**Answer**
+
+```
 Invalid
-Question 4
+```
+
+**Question 4**  
 What will be the output?
 
-cpp
+```cpp
 char ch = 'A';
 
 switch(ch){
@@ -783,122 +899,107 @@ switch(ch){
     default:
         cout << "Other";
 }
-Answer
+```
 
-text
+**Answer**
+
+```
 Apple
-📌 Practice Questions
-Basic Level
-Q1
+```
+
+## 📌 Practice Questions
+
+### Basic Level
+
+**Q1**  
 Write a program to take a number from 1–7 and print the corresponding day using switch.
 
-1 → Monday
+- 1 → Monday
+- 2 → Tuesday
+- 3 → Wednesday
+- 4 → Thursday
+- 5 → Friday
+- 6 → Saturday
+- 7 → Sunday
 
-2 → Tuesday
-
-3 → Wednesday
-
-4 → Thursday
-
-5 → Friday
-
-6 → Saturday
-
-7 → Sunday
-
-Q2
+**Q2**  
 Write a program to take a month number and print the corresponding month name.
 
-Q3
+**Q3**  
 Write a program to take a month number and print the corresponding season.
 
-11, 12, 1, 2 → Winter
+- 11, 12, 1, 2 → Winter
+- 3, 4, 5, 6   → Summer
+- 7, 8, 9, 10  → Rainy
 
-3, 4, 5, 6 → Summer
-
-7, 8, 9, 10 → Rainy
-
-Q4
+**Q4**  
 Write a program to take a character and check whether it is a vowel using switch.
 
-Q5
+**Q5**  
 Write a program to take a grade and print:
 
-A → Excellent
+- A → Excellent
+- B → Very Good
+- C → Good
+- D → Average
+- F → Fail
 
-B → Very Good
+### Intermediate Practice
 
-C → Good
+**Q6**  
+Create a calculator using switch.  
+Operations: `+`, `-`, `*`, `/`, `%`
 
-D → Average
-
-F → Fail
-
-Intermediate Practice
-Q6
-Create a calculator using switch.
-Operations: +, -, *, /, %
-
-Q7
+**Q7**  
 Create a menu-driven program:
 
-text
+```
 1. Addition
 2. Subtraction
 3. Multiplication
 4. Division
 5. Exit
-Q8
+```
+
+**Q8**  
 Create a menu-driven program to calculate:
 
-Area of Circle
+1. Area of Circle
+2. Area of Rectangle
+3. Area of Square
+4. Area of Triangle
 
-Area of Rectangle
-
-Area of Square
-
-Area of Triangle
-
-Q9
+**Q9**  
 Create a simple ATM menu:
 
-Check Balance
+1. Check Balance
+2. Deposit
+3. Withdraw
+4. Exit
 
-Deposit
-
-Withdraw
-
-Exit
-
-Q10
+**Q10**  
 Create a restaurant menu:
 
-Pizza
-
-Burger
-
-Sandwich
-
-Pasta
-
-Exit
+1. Pizza
+2. Burger
+3. Sandwich
+4. Pasta
+5. Exit
 
 Print the selected item.
 
-📌 Quick Revision
+## 📌 Quick Revision
+
 Remember:
 
-switch → Select a value
+- `switch` → Select a value
+- `case`   → Match a value
+- `break`  → Stop execution
+- `default` → If nothing matches
 
-case → Match a value
+**Basic Structure**
 
-break → Stop execution
-
-default → If nothing matches
-
-Basic Structure
-
-cpp
+```cpp
 switch(expression){
 
     case value1:
@@ -912,35 +1013,28 @@ switch(expression){
     default:
         // code
 }
-📌 Key Takeaways
-switch is a conditional/decision-making statement.
+```
 
-It is useful for multiple fixed choices.
+## 📌 Key Takeaways
 
-case represents a possible value.
+- `switch` is a conditional/decision-making statement.
+- It is useful for multiple fixed choices.
+- `case` represents a possible value.
+- `break` terminates the switch.
+- Missing `break` can cause fall-through.
+- `default` handles unmatched values.
+- Multiple cases can execute the same block.
+- `switch` can be used with integers and characters.
+- `switch` is commonly used for menu-driven programs.
+- `if-else` is better for ranges and complex conditions.
+- Case values must be unique.
+- Character cases use single quotes.
 
-break terminates the switch.
+## 🚀 Recommended Next Topic
 
-Missing break can cause fall-through.
+After `switch`, the next topic is:
 
-default handles unmatched values.
-
-Multiple cases can execute the same block.
-
-switch can be used with integers and characters.
-
-switch is commonly used for menu-driven programs.
-
-if-else is better for ranges and complex conditions.
-
-Case values must be unique.
-
-Character cases use single quotes.
-
-🚀 Recommended Next Topic
-After switch, the next topic is:
-
-text
+```
 Conditional Statements
         ↓
 Switch Statement
@@ -954,5 +1048,8 @@ Pattern Programming
 Functions
         ↓
 Arrays
-📝 One-Line Definition
-The switch statement is used to execute different blocks of code based on the exact value of an expression.
+```
+
+## 📝 One-Line Definition
+
+The `switch` statement is used to execute different blocks of code based on the exact value of an expression.
