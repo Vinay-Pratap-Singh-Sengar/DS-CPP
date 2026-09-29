@@ -1,4 +1,4 @@
-# C++ Strings — Classroom Notes
+# C++ Strings
 
 ## 1. What is a String?
 
