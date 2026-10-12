@@ -1,12 +1,12 @@
 
 #include <iostream>
-#include <set>
+#include <unordered_set>
 using namespace std;
 
 int main() {
 
-    // 1. Create a set
-    set<int> numbers;
+    // 1. Create an unordered_set
+    unordered_set<int> numbers;
 
     // 2. Insert elements
     numbers.insert(30);
@@ -16,15 +16,15 @@ int main() {
     numbers.insert(10);
     numbers.insert(30);
 
-    // 3. Display the set
+    // 3. Display all elements
     cout << "Set elements: ";
     for (int x : numbers) {
         cout << x << " ";
     }
     cout << endl;
 
-    // 4. Find the size of the set
-    cout << "Size of set: " << numbers.size() << endl;
+    // 4. Find the size
+    cout << "Size: " << numbers.size() << endl;
 
     // 5. Check whether the set is empty
     if (numbers.empty()) {
@@ -33,7 +33,7 @@ int main() {
         cout << "Set is not empty" << endl;
     }
 
-    // 6. Search for an element using find()
+    // 6. Search using find()
     int key = 20;
 
     if (numbers.find(key) != numbers.end()) {
@@ -58,7 +58,7 @@ int main() {
     }
     cout << endl;
 
-    // 9. Insert another element
+    // 9. Insert a new element
     numbers.insert(40);
 
     cout << "After inserting 40: ";
@@ -67,9 +67,9 @@ int main() {
     }
     cout << endl;
 
-    // 10. Display using iterator
+    // 10. Display using an iterator
     cout << "Using iterator: ";
-    for (set<int>::iterator it = numbers.begin();
+    for (unordered_set<int>::iterator it = numbers.begin();
          it != numbers.end(); it++) {
         cout << *it << " ";
     }
