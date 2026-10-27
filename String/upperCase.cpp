@@ -13,7 +13,7 @@ int main(){
     for(int i = 0 ; i < name.length(); i++){
         cout<<toupper(name[i])<<endl;
     }
-    string s = "Hello World";
-    cout << s.find("World");
+    // string s = "Hello World";
+    // cout << s.find("World");
     return 0;
 }
