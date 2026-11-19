@@ -30,7 +30,5 @@ int main() {
     cout<<n2->next<<endl;
     cout<<n3->data<<endl;
     cout<<n3->next<<endl;
-
-
     return 0;
 }
